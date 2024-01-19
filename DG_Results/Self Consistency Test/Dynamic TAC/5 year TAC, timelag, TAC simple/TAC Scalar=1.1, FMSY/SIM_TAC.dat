@@ -1,0 +1,184 @@
+#nages //max age is a plus group
+10
+#nyrs
+200
+#nfleets
+1
+#yr_fishing_start
+126
+#yr_TAC_start
+196
+#yr_survey_start
+151
+#phase_beta1
+4
+#phase_beta2
+4
+#phase_beta1_index
+4
+#phase_beta2_index
+4
+#phase_ln_sel_age
+-4
+#phase_ln_sel_age_index
+-4
+#phase_F
+1
+#phase_F_devs
+2
+#phase_rec_dev
+3
+#phase_ln_R_ave
+1
+#phase_h
+-4
+#phase_ln_R0_offset
+-1
+#phase_ln_init_abund
+1
+#phase_q
+1
+#beta1_initial
+2
+#beta2_initial
+4
+#beta1_index_initial
+2
+#beta2_index_initial
+4
+#ln_sel_age_initial
+0.5
+#ln_sel_age_index_initial
+0.5
+#F_initial
+.5
+#F_devs_initial
+0
+#rec_dev_initial
+0
+#ln_R_ave_initial
+11
+#h_initial
+.5
+#ln_R0_offset_initial
+-0.5
+#ln_init_abund_initial
+7
+#q_initial
+.001
+#phase_dummy //should be positive for simulation
+1
+#phase_dummy_assessment //should be neg for estimation
+-1
+#dummy_start  //start value for dummy variable
+-1234
+#SIM_REC_FXN_type  //==0 Ave REC, ==1 BH
+1
+#ASS_REC_FXN_type  //==0 Ave REC, ==1 BH
+0
+#est_steep_switch, ==0 fix at sim_h, ==1 estimate
+0
+#init_abund_switch //how to estimate initial abundance, ==0 assume equilibrium age strcuture from an offset from R0, ==1 estimate initial abundance at each age
+1
+#SIM_survey_sel_switch // ==1 input SAA, ==2 logistic
+2
+#ASS_survey_sel_switch // ==1 input SAA, ==2 logistic
+2
+#SIM_sel_switch // ==1 input SAA, ==2 logistic
+2
+#ASS_sel_switch // ==1 input SAA, ==2 logistic
+2
+#TAC_CNST_switch  //==1 TAC is set constant to level in yr_TAC_start, ==0 TAC is recalculated each year
+0
+#TAC_timelag  //==0 there is no timelag and TAC is based on abundance at start of year, otehrwise TAC includes a 1 year timelage and is based on abundance at start of previous year
+1
+#TAC_type  //==0 simple TAC=FMSY*exploitable Biomass, ==1 TAC=Baranov' catch equation fishing at FMSY
+0
+#Fit_OBS  //==0 yes fit observed data, ==1 no fit true values (i.e., perform self-consistency run)
+1
+#SIM_Fmsy_switch //==1 do an Fmsy simulation with no TAC, ==0 use Fmsy to simulate population prior to TAC
+0
+#SIM_deterministic_recruit //==1 perform deterministic recruitment simulations (rec_devs=1), ==0 perform stochastic recruit simulations
+0
+#F_devs_pen_switch //should include penalty on F_devs to avoid extreme values?  ==1 TRUE, ==0 FALSE
+1
+#R_devs_pen_switch //should include penalty on F_devs to avoid extreme values?  ==1 TRUE, ==0 FALSE
+1
+#F_devs_pen_mult
+5
+#R_devs_pen_mult
+5
+#SIM_h  //SIM steepness value
+0.8
+#SIM_R_ave  //SIM virgin recruitment
+300000
+#SIM_sigma_recruit  //SR variance
+0.4
+#ASS_sigma_recruit
+0.6
+#sigma_F  //simulated F variance
+0.2
+#Fmsy_input  //value of Fmsy calculated from long-term equilibrium
+0.319
+#Fmsy_scalar  //scalar on Fmsy used to allow high or low F prior to TAC implementation
+1
+#TAC_scalar //scalar on TAC meant to represent error in Fmsy or est_abundance when setting a TAC (i.e., if underestimate Fmsy or abundance, then TAC would be less than should so this simulates this)
+1.1
+#SIM_beta1_index  //index logistic selectivity parameter 1 (age at 50% selectivity)
+1.5
+#SIM_beta2_index  //index logistic selectivity parameter 2 (difference in age at 50% selectivity and 95% selectivity)
+1.5
+#SIM_input_sel_index //input selectivity at age for index if index sel switch==2
+0.01 0.25 .5 .75 0.85 0.9 0.95 0.99 1 1
+#SIM_beta1  //fishery logistic selectivity parameter 1 (age at 50% selectivity)
+3.2
+#SIM_beta2  //fishery logistic selectivity parameter 2 (difference in age at 50% selectivity and 95% selectivity)
+1.9
+#SIM_input_sel_index //input selectivity at age for index if index sel switch==2
+0.001 0.025 .15 .25 0.65 0.9 0.95 0.99 1 1
+#SIM_q_survey
+0.000001
+#wt_at_age
+0.1 0.5 0.75 1.5 1.75 1.95 2.0 2.1 2.2 2.25
+#maturity
+0 0.15 0.5 0.75 0.8 0.9 1.0 1.0 1.0 1.0
+#sex_scalar  //scalar determining fraction female for SSB
+1.0
+#M  //natural mortality
+0.4 0.3 0.27 0.23 0.2 0.18 0.17 0.16 0.15 0.15
+#tspawn //spawn time
+0.4
+#Fnew_start //start value of Newton-Raphson F search
+0.1
+#NR_dev  //step size for NR
+0.001
+#NR_iterations  //iterations to perform for NR
+15
+#max_Fnew  //max F to allow in NR search
+3
+#SIM_ncatch  //ESS for simulating catch-at-age variance
+200
+#SIM_nindex //ESS for simulating survey CAA variance
+200
+#sigma_index //variance for simulating error in survey index
+0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
+#ASS_sigma_index
+0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
+#sigma_landings //variance for simulating error in catch
+0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05
+#wt_index
+1
+#wt_recruit
+1
+#wt_index_prop
+1
+#wt_landings
+1
+#wt_catch_prop
+1
+#MNconst
+0.0000001
+#debug
+-999
+#myseed
+1
